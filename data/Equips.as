@@ -1,3 +1,31 @@
+package
+{
+   public class Equips
+   {
+      public static var EQUIP_SHOP_1:Array;
+      
+      public static var EQUIP_SHOP_2:Array;
+      
+      public static var EQUIP_SHOP_3:Array;
+      
+      public static var long50:Array = [];
+      
+      public static var long100:Array = [];
+      
+      public static var long150:Array = [];
+      
+      public static var long200:Array = [];
+      
+      public static var short30:Array = [];
+      
+      public static var short50:Array = [];
+      
+      public static var short100:Array = [];
+      
+      public static var down50:Array = [];
+      
+      public static var down30:Array = [];
+      
       public static var _long50:Array = [10,20,30,40,50];
       
       public static var _long100:Array = [20,40,60,80,100];
@@ -15,6 +43,52 @@
       public static var _down30:Array = [-30,-30,-30,-30,-30];
       
       public static var _down50:Array = [-50,-50,-50,-50,-50];
+      
+      public static var template:Equip = new Equip({
+         "name":"",
+         "description":"",
+         "type":Equip.SWORD,
+         "icon":1,
+         "skin":2,
+         "map":[3],
+         "HP":[0],
+         "MP":[0],
+         "attack":[0],
+         "defence":[0],
+         "magicAttack":[0],
+         "magicDefence":[0],
+         "accuracy":[0],
+         "evade":[0],
+         "resistance":{
+            "derp":[long50],
+            "pie":[long100],
+            "cake":[long100]
+         },
+         "element":Element.HOLY,
+         "statusEffect":Status.NONE,
+         "buffEffect":Stats.NONE,
+         "specials":[],
+         "materials":[[Items.iron,2],[Items.steel,3],[Items.gold,3,Items.steel,5],[Items.diamond,1,Items.ruby,2]],
+         "HP2":[0],
+         "attack2":[0],
+         "defence2":[0],
+         "magicAttack2":[0],
+         "magicDefence2":[0],
+         "accuracy2":[0],
+         "evade2":[0],
+         "resistance2":{
+            "derp":long50,
+            "herp":long100
+         },
+         "element2":Element.NONE,
+         "statusEffect2":Status.NONE,
+         "statusChance2":[0],
+         "statusDegree2":[0],
+         "buffEffect2":Stats.NONE,
+         "buffChance2":[0],
+         "buffDegree2":[0],
+         "specials2":[[Equip.BOOST,Element.HOLY],null,[Equip.CAST,Spells.holyfire,0.4],null,[Equip.DEFEND_STATUS,Status.AUTOLIFE,3]]
+      });
       
       public static var heavensgate:Equip = new Equip({
          "SID":"heavensgate",
@@ -583,7 +657,9 @@
          "specials":[[Equip.BOOST_DEBUFFS],null,[Equip.CAST,Spells.bones,0.6],null,[Equip.SUMMON,Spells.bonestar,0.66]],
          "materials":[[Items.claw,1],[Items.claw,2],[Items.spike,3,Items.leather,2],[Items.moonpearl,2,Summons.HandSkeleton,1]]
       });
-
+      
+      public static var SWORDS:Array = [heavensgate,berzerker,inferno,iceneedle,lightningbolt,sapphiresaint,poisonfang,chopper,giantslayer,hyperdrill,emeraldsmasher,devilsfork,ultrapro9000,clubofwithering,crimsonrazorback,dragonfeather,goldenaxe,darkstalker,fusionblade,souleater,loveblade];
+      
       public static var solspear:Equip = new Equip({
          "SID":"solspear",
          "type":Equip.STAFF,
@@ -1140,7 +1216,9 @@
          "specials":[[Equip.BOOST_DEBUFFS],null,[Equip.CAST,Spells.tentacles,0.5],null,[Equip.BOOST_BUFFS]],
          "materials":[[Items.iron,2],[Items.virus,2],[Items.scales,1,Items.virus,1],[Summons.ChomperMutant,1,Items.rune,1]]
       });
-
+      
+      public static var STALVES:Array = [solspear,arctictrident,zeuswrath,druidstaff,nimbusrod,dragonwings,gigavolt,alchemyset,kaladanda,wreckingrod,elderswisdom,obsidianstaff,celticcross,darktooth,knife,paperfan,oakstaff,beholdingeye,soulcrusher,shootingstar,slimestaff];
+      
       public static var shadowblaster:Equip = new Equip({
          "SID":"shadowblaster",
          "type":Equip.GUN,
@@ -1709,7 +1787,9 @@
          "specials":[[Equip.BOOST,Element.FIRE],null,[Equip.STATUS,Status.HEAVY,2,0.5]],
          "materials":[[Items.pipe,2],[Items.pipe,8],[Items.scales,1,Items.pipe,6],[Items.scales,2,Summons.SpriteFire,1]]
       });
-
+      
+      public static var GUNS:Array = [nitrobomber,hellfireshotgun,thundercore,deepblue,chainsawgun,vortexcannon,subzero,shadowblaster,biohazardblaster,crystalwing,heavyclaw,soulpistol,supersnipe,coconutshooter,flametitan,heartstopper,gungnir,spinesnapper,desertscorpion,accelerator,greengoliath];
+      
       public static var fairybow:Equip = new Equip({
          "SID":"fairybow",
          "type":Equip.BOW,
@@ -2271,7 +2351,9 @@
          "specials":[[Equip.BOOST_HEALING],null,[Equip.STATUS,Status.DEFEND,1,0.33],null,[Equip.BOOST,Element.HOLY]],
          "materials":[[Items.seashell,1,Items.iron,1],[Items.buckle,4],[Summons.CreepRed,1],[Items.grail,1,Items.gold,1,Items.silver,1]]
       });
-
+      
+      public static var BOWS:Array = [fairybow,coldsteel,thorshammer,aquamarine,gaiasgift,crimsondragon,irontusk,fenrirsjaw,thedeceased,juggernaught,emeraldcyclone,eagleeye,thestinger,chiefshorns,regalturtle,alchemistsbow,blackwidow,angelwing,sharanga,earthswhisper,heavensvoice];
+      
       public static var steelbuckler:Equip = new Equip({
          "SID":"steelbuckler",
          "type":Equip.TOYS,
@@ -2806,7 +2888,9 @@
          "specials":[[Equip.CAST,Spells.paperStars,0.2],null,[Equip.COUNTER,Spells.backstab],null,[Equip.BOOST_BUFFS]],
          "materials":[[Items.wool,2],[Items.brick,4],[Items.turd,5],[Items.snowball,1]]
       });
-
+      
+      public static var TOYS:Array = [steelbuckler,banditblade,neonlightbulb,masamune,riotshield,leafshield,starhammer,dogsausage,icecreamsandwich,godlybook,humanskull,bloodbank,vikingbuckler,turtleshell,elvenshield,pixelpopper,bookofspells,powerpaw,devilssunrise,kingsguard,bustersword];
+      
       public static var captainhat:Equip = new Equip({
          "SID":"captainshat",
          "type":Equip.HAT_MALE,
@@ -5341,7 +5425,22 @@
          "specials":[null,null,[Equip.DEFEND_BUFF,Stats.HP,20]],
          "materials":[[Items.claw,5],[Items.spike,5]]
       });
-
+      
+      public static var FLAIRS:Array = [firebadge,thunderbadge,icebadge,pearlnecklace,surgicalmask,angelpin,bandage,ironcross,silvercross,pentagram,battlepaint,luckyclover,hoopearings,triforce,greencross,fairy,pocketwatch,angryfaic,targetbadge,balancebadge,tentacle,peacebadge,crossbonepin,chromeearings,amethystearings,emeraldearings,fatfly,fakemustache,eyebrows,chillcloud,cattail,minidrone,swordmedal,shieldmedal,goldstar,platinumstar,heartpendant];
+      
+      public static var FLAIRS_PLUS:Array = [firebadge,thunderbadge,icebadge,pearlnecklace,surgicalmask,angelpin,bandage,ironcross,silvercross,pentagram,battlepaint,luckyclover,hoopearings,triforce,greencross,fairy,pocketwatch,angryfaic,targetbadge,balancebadge,tentacle,peacebadge,crossbonepin,chromeearings,amethystearings,emeraldearings,fatfly,fakemustache,eyebrows,chillcloud,cattail,minidrone,swordmedal,shieldmedal,goldstar,platinumstar,heartpendant,luckyfish,coincharm,juicybeast,onering,babypenguin,ramchip,meowmeowbadge,nanomachines,pixelglasses,companioncube,dogtags,tetromino,viridian,dinoegg,biteybadge,narutomaki,petrock,tooth];
+      
+      public static var FLAIRS_DISPLAY:Array = [firebadge,thunderbadge,icebadge,pearlnecklace,surgicalmask,angelpin,bandage,ironcross,silvercross,pentagram,nanomachines,battlepaint,luckyclover,hoopearings,triforce,greencross,fairy,pocketwatch,meowmeowbadge,viridian,angryfaic,targetbadge,tentacle,peacebadge,crossbonepin,chromeearings,amethystearings,emeraldearings,fatfly,biteybadge,babypenguin,petrock,tetromino,pixelglasses,fakemustache,eyebrows,ramchip,juicybeast,chillcloud,dinoegg,luckyfish,coincharm,minidrone,heartpendant,onering,companioncube,dogtags,narutomaki,cattail,tooth,balancebadge,swordmedal,shieldmedal,goldstar,platinumstar];
+      
+      public static var ALL_EQUIPS:Array = FLAIRS.concat(MALE_HATS).concat(FEMALE_HATS).concat(MALE_ARMOR).concat(FEMALE_ARMOR).concat(BOWS).concat(GUNS).concat(STALVES).concat(SWORDS).concat(TOYS).concat([empty]).concat([luckyfish,coincharm,juicybeast,onering,babypenguin,ramchip,meowmeowbadge,nanomachines,pixelglasses,companioncube,dogtags,tetromino,viridian,dinoegg,biteybadge,narutomaki,petrock,tooth]);
+      
+      public static var PREMIUM_EQUIPS:Array = [slimebunny,schooluniform,gigavolt,bookofspells,flametitan,devilsfork,catears,scottishcap,scottishkilt,irontusk,headband,greengoliath,flamesuit,robotears,mechaarmor,gungnir,fusionblade,shootingstar,earthswhisper,thestinger,soulcrusher,deathmask,shellarmor,maidoutfit,kingsguard,elvenshield,goldenaxe,dragonfeather,puppyhat,heartstopper,dragonwings,spartanhelmet,spartancuirass,regalturtle,emeraldsmasher,oakstaff,bunnyears,accelerator,emeraldcyclone,devilssunrise,turtlegi,samidress,swordmedal,shieldmedal,goldstar,platinumstar,bustersword,starhammer];
+      
+      public function Equips()
+      {
+         super();
+      }
+      
       public static function setEquipResistances() : *
       {
          if(Options.lessPlayerResistance)
@@ -5429,3 +5528,471 @@
             down50[4] = -50;
          }
       }
+      
+      public static function init() : *
+      {
+         var _loc1_:Equip = null;
+         var _loc2_:Array = null;
+         var _loc3_:Array = null;
+         var _loc4_:Array = null;
+         var _loc5_:Array = null;
+         var _loc6_:Array = null;
+         setEquipResistances();
+         for each(_loc1_ in ALL_EQUIPS)
+         {
+            _loc1_.backupStatusResistance();
+            (EquipsAlt[_loc1_.SID] as Equip).backupStatusResistance();
+         }
+         _loc2_ = [];
+         _loc3_ = [];
+         _loc4_ = [];
+         _loc5_ = [];
+         _loc6_ = [];
+         FLAIRS[37] = luckyfish;
+         FLAIRS[38] = coincharm;
+         Flags.checkSeason();
+         if(Flags.CHRISTMAS.quantity)
+         {
+            _loc3_ = [santahat,hollyhairpin];
+         }
+         if(Flags.HALLOWEEN.quantity)
+         {
+            _loc2_ = [pumpkinhead,spiderbobble];
+         }
+         if(Flags.EASTER.quantity)
+         {
+            _loc4_ = [slimestaff];
+         }
+         if(Flags.VALENTINES.quantity)
+         {
+            _loc5_ = [heartpendant];
+         }
+         if(Flags.LUNAR.quantity)
+         {
+            _loc6_ = [luckyfish];
+         }
+         EQUIP_SHOP_1 = [armyhelmet,nursehat,genjiarmor,nurseuniform,pocketwatch,poisonfang,icecreamsandwich,vortexcannon,fenrirsjaw,nimbusrod,vikingfur,bluedress,giantslayer,alchemistsbow,vikingbuckler].concat(_loc3_).concat(_loc2_).concat(_loc5_).concat(_loc4_).concat(_loc6_);
+         EQUIP_SHOP_2 = EQUIP_SHOP_1;
+         EQUIP_SHOP_3 = EQUIP_SHOP_1;
+         for each(_loc1_ in ALL_EQUIPS)
+         {
+            if(_loc1_)
+            {
+               if(Debug.weaponSet == 3)
+               {
+                  _loc1_.owned = true;
+               }
+               else
+               {
+                  _loc1_.owned = false;
+               }
+               if(Debug.skillSet == 0)
+               {
+                  if(_loc1_.type == Equip.FLAIR)
+                  {
+                     _loc1_.level = 1;
+                  }
+                  else
+                  {
+                     _loc1_.level = 1;
+                  }
+               }
+               if(Debug.skillSet == 1)
+               {
+                  if(_loc1_.type == Equip.FLAIR)
+                  {
+                     _loc1_.level = 1;
+                  }
+                  else
+                  {
+                     _loc1_.level = 1;
+                  }
+               }
+               if(Debug.skillSet == 2)
+               {
+                  if(_loc1_.type == Equip.FLAIR)
+                  {
+                     _loc1_.level = 2;
+                  }
+                  else
+                  {
+                     _loc1_.level = 3;
+                  }
+               }
+               if(Debug.skillSet == 3)
+               {
+                  if(_loc1_.type == Equip.FLAIR)
+                  {
+                     _loc1_.level = 3;
+                  }
+                  else
+                  {
+                     _loc1_.level = 5;
+                  }
+               }
+            }
+         }
+         for each(_loc1_ in PREMIUM_EQUIPS)
+         {
+            _loc1_.premium = true;
+         }
+         for each(_loc1_ in SWORDS)
+         {
+            _loc1_.type = Equip.SWORD;
+         }
+         for each(_loc1_ in STALVES)
+         {
+            _loc1_.type = Equip.STAFF;
+         }
+         for each(_loc1_ in GUNS)
+         {
+            _loc1_.type = Equip.GUN;
+         }
+         for each(_loc1_ in BOWS)
+         {
+            _loc1_.type = Equip.BOW;
+         }
+         for each(_loc1_ in TOYS)
+         {
+            _loc1_.type = Equip.TOYS;
+         }
+         for each(_loc1_ in FEMALE_HATS)
+         {
+            _loc1_.type = Equip.HAT_FEMALE;
+         }
+         for each(_loc1_ in MALE_HATS)
+         {
+            _loc1_.type = Equip.HAT_MALE;
+         }
+         for each(_loc1_ in FEMALE_ARMOR)
+         {
+            _loc1_.type = Equip.ARMOR_FEMALE;
+         }
+         for each(_loc1_ in MALE_ARMOR)
+         {
+            _loc1_.type = Equip.ARMOR_MALE;
+         }
+         for each(_loc1_ in FLAIRS)
+         {
+            _loc1_.type = Equip.FLAIR;
+         }
+         if(!Options.altEquipLocations)
+         {
+            for each(_loc1_ in [empty,captainhat,hoboclothes,ultrapro9000])
+            {
+               _loc1_.owned = true;
+            }
+            setStartingEquips();
+            armyhelmet.cost = 300;
+            nursehat.cost = 300;
+            genjiarmor.cost = 600;
+            nurseuniform.cost = 600;
+            pocketwatch.cost = 1000;
+            poisonfang.cost = 1000;
+            icecreamsandwich.cost = 1000;
+            alchemistsbow.cost = 8000;
+            vortexcannon.cost = 8000;
+            nimbusrod.cost = 8000;
+            vikingfur.cost = 20000;
+            bluedress.cost = 20000;
+            giantslayer.cost = 60000;
+            fenrirsjaw.cost = 60000;
+            vikingbuckler.cost = 60000;
+            luckyfish.cost = 888;
+            santahat.cost = 300;
+            hollyhairpin.cost = 300;
+            pumpkinhead.cost = 300;
+            spiderbobble.cost = 300;
+            heartpendant.cost = 3000;
+            slimestaff.cost = 60000;
+         }
+         else
+         {
+            empty.owned = true;
+         }
+         countTotalCost();
+         var _loc7_:int = 0;
+         while(_loc7_ < Equips.ALL_EQUIPS.length)
+         {
+            if(Equips.ALL_EQUIPS[_loc7_])
+            {
+               (Equips.ALL_EQUIPS[_loc7_] as Equip).ID = _loc7_;
+            }
+            _loc7_++;
+         }
+      }
+      
+      public static function setStartingEquips() : *
+      {
+         if(Debug.weaponSet == 1)
+         {
+            for each(e in [ultrapro9000,crimsonrazorback,darktooth,druidstaff,shadowblaster,nitrobomber,steelbuckler,banditblade,fairybow,eagleeye])
+            {
+               e.owned = true;
+            }
+            for each(e in [orangebauble,leafclip,flowerbobble,schooluniform,cactusdress,redribbon,rangerskirt,reddress])
+            {
+               e.owned = true;
+            }
+            for each(e in [knighthelmet,heroicarmor,captainhat,cardboardbox,hoboclothes,armyhelmet,camojacket,officercoat,officerhat])
+            {
+               e.owned = true;
+            }
+            for each(e in [hoopearings,bandage,targetbadge])
+            {
+               e.owned = true;
+            }
+         }
+         if(Debug.weaponSet == 2)
+         {
+            for each(e in [ultrapro9000,crimsonrazorback,heavensgate,berzerker,devilsfork,iceneedle,sapphiresaint,chopper,clubofwithering,dragonfeather,goldenaxe,solspear,arctictrident,zeuswrath,nimbusrod,alchemyset,wreckingrod,elderswisdom,celticcross,knife,darktooth,druidstaff,shadowblaster,nitrobomber,heartstopper,hellfireshotgun,desertscorpion,vortexcannon,biohazardblaster,supersnipe,soulpistol,heavyclaw,gungnir,fairybow,eagleeye,coldsteel,thorshammer,gaiasgift,irontusk,juggernaught,thestinger,chiefshorns,heavensvoice,sharanga,steelbuckler,banditblade,neonlightbulb,masamune,devilssunrise,godlybook,pixelpopper,turtleshell,leafshield,starhammer,bookofspells])
+            {
+               e.owned = true;
+            }
+            for each(e in [orangebauble,leafclip,flowerbobble,schooluniform,cactusdress,redribbon,rangerskirt,reddress,nursehat,nurseuniform,bunnyears,ninjachopsticks,ninjaskirt,cowhorns,cowcostume,mechaarmor,robotears,summerkimono,samidress,blueelephant,drillbits])
+            {
+               e.owned = true;
+            }
+            for each(e in [knighthelmet,heroicarmor,captainhat,captainscoat,cardboardbox,hoboclothes,armyhelmet,camojacket,officercoat,officerhat,hornedhelmet,vikingfur,spartancuirass,spartanhelmet,ninjagear,baskethat,wizardcloak,wizardhat,gasmask,puppyhat,captainscoat,hipstershirt,priesttunic])
+            {
+               e.owned = true;
+            }
+            for each(e in [hoopearings,bandage,targetbadge,firebadge,icebadge,thunderbadge,pearlnecklace,surgicalmask,eyebrows,fakemustache,cattail,battlepaint,chromeearings,emeraldearings,balancebadge,fairy,chillcloud])
+            {
+               e.owned = true;
+            }
+         }
+      }
+      
+      public static function countTotalCost() : *
+      {
+         var _loc1_:Array = null;
+         var _loc2_:int = 0;
+         var _loc3_:int = 0;
+         for each(_loc1_ in [FLAIRS_DISPLAY])
+         {
+            _loc2_ = 0;
+            _loc3_ = 0;
+            while(_loc3_ < _loc1_.length)
+            {
+               _loc2_ += (_loc1_[_loc3_] as Equip).upgradeCost();
+               _loc3_++;
+            }
+         }
+      }
+      
+      public static function countTotalResistance() : *
+      {
+         var _loc2_:String = null;
+         var _loc3_:Equip = null;
+         var _loc1_:int = 0;
+         for each(_loc2_ in Element.ELEMENTS)
+         {
+            _loc1_ = 0;
+            for each(_loc3_ in BOWS.concat(GUNS).concat(STALVES).concat(SWORDS).concat(TOYS))
+            {
+               _loc1_ += _loc3_.elementalResistance[_loc2_][_loc3_.level - 1];
+            }
+         }
+         for each(_loc2_ in Status.RESISTANCE)
+         {
+            _loc1_ = 0;
+            for each(_loc3_ in BOWS.concat(GUNS).concat(STALVES).concat(SWORDS).concat(TOYS))
+            {
+               _loc1_ += _loc3_.statusResistance[_loc2_][_loc3_.level - 1];
+            }
+         }
+         for each(_loc2_ in Element.ELEMENTS)
+         {
+            _loc1_ = 0;
+            for each(_loc3_ in FLAIRS.concat(MALE_HATS).concat(FEMALE_HATS).concat(MALE_ARMOR).concat(FEMALE_ARMOR))
+            {
+               _loc1_ += _loc3_.elementalResistance[_loc2_][_loc3_.level - 1];
+            }
+         }
+         for each(_loc2_ in Status.RESISTANCE)
+         {
+            _loc1_ = 0;
+            for each(_loc3_ in FLAIRS.concat(MALE_HATS).concat(FEMALE_HATS).concat(MALE_ARMOR).concat(FEMALE_ARMOR))
+            {
+               _loc1_ += _loc3_.statusResistance[_loc2_][_loc3_.level - 1];
+            }
+         }
+      }
+      
+      public static function customerMedal() : *
+      {
+         var _loc1_:Equip = null;
+         for each(_loc1_ in EQUIP_SHOP_1)
+         {
+            if(!_loc1_.owned)
+            {
+               return;
+            }
+         }
+         Medals.unlock(Medals.bestCustomer);
+      }
+      
+      public static function get(param1:*) : Equip
+      {
+         if(param1 == undefined)
+         {
+            return empty;
+         }
+         return ALL_EQUIPS[param1];
+      }
+      
+      public static function removeDuplicateFlairs(param1:int) : *
+      {
+      }
+      
+      public static function emptyFlairs(param1:*) : *
+      {
+         var _loc2_:Player = Players.PLAYERS[param1 - 1];
+         _loc2_.flair1 = empty;
+         _loc2_.flair2 = empty;
+         _loc2_.flair3 = empty;
+      }
+      
+      public static function initRandomEquips() : *
+      {
+         if(!Options.altEquipLocations)
+         {
+            return;
+         }
+         EQUIP_SHOP_1 = [];
+         var _loc1_:Array = [armyhelmet,nursehat,genjiarmor,nurseuniform,pocketwatch,poisonfang,nimbusrod,vortexcannon,fenrirsjaw,icecreamsandwich,pumpkinhead,spiderbobble,santahat,hollyhairpin,heartpendant,giantslayer,slimestaff,alchemistsbow,vikingbuckler,luckyfish,vikingfur,bluedress];
+         var _loc2_:int = 0;
+         while(_loc2_ < 22)
+         {
+            EQUIP_SHOP_1[_loc2_] = Equip.getRandomEquip((_loc1_[_loc2_] as Equip).type,true);
+            _loc2_++;
+         }
+         EQUIP_SHOP_2 = EQUIP_SHOP_1;
+         EQUIP_SHOP_3 = EQUIP_SHOP_1;
+         if(EQUIP_SHOP_1[0])
+         {
+            EQUIP_SHOP_1[0].cost = 800;
+         }
+         if(EQUIP_SHOP_1[1])
+         {
+            EQUIP_SHOP_1[1].cost = 800;
+         }
+         if(EQUIP_SHOP_1[2])
+         {
+            EQUIP_SHOP_1[2].cost = 800;
+         }
+         if(EQUIP_SHOP_1[3])
+         {
+            EQUIP_SHOP_1[3].cost = 800;
+         }
+         if(EQUIP_SHOP_1[4])
+         {
+            EQUIP_SHOP_1[4].cost = 1000;
+         }
+         if(EQUIP_SHOP_1[5])
+         {
+            EQUIP_SHOP_1[5].cost = 1000;
+         }
+         if(EQUIP_SHOP_1[6])
+         {
+            EQUIP_SHOP_1[6].cost = 1000;
+         }
+         if(EQUIP_SHOP_1[7])
+         {
+            EQUIP_SHOP_1[7].cost = 8000;
+         }
+         if(EQUIP_SHOP_1[8])
+         {
+            EQUIP_SHOP_1[8].cost = 8000;
+         }
+         if(EQUIP_SHOP_1[9])
+         {
+            EQUIP_SHOP_1[9].cost = 8000;
+         }
+         if(EQUIP_SHOP_1[10])
+         {
+            EQUIP_SHOP_1[10].cost = 4000;
+         }
+         if(EQUIP_SHOP_1[11])
+         {
+            EQUIP_SHOP_1[11].cost = 4000;
+         }
+         if(EQUIP_SHOP_1[12])
+         {
+            EQUIP_SHOP_1[12].cost = 12000;
+         }
+         if(EQUIP_SHOP_1[13])
+         {
+            EQUIP_SHOP_1[13].cost = 12000;
+         }
+         if(EQUIP_SHOP_1[14])
+         {
+            EQUIP_SHOP_1[14].cost = 12000;
+         }
+         if(EQUIP_SHOP_1[15])
+         {
+            EQUIP_SHOP_1[15].cost = 60000;
+         }
+         if(EQUIP_SHOP_1[16])
+         {
+            EQUIP_SHOP_1[16].cost = 60000;
+         }
+         if(EQUIP_SHOP_1[17])
+         {
+            EQUIP_SHOP_1[17].cost = 60000;
+         }
+         if(EQUIP_SHOP_1[18])
+         {
+            EQUIP_SHOP_1[18].cost = 60000;
+         }
+         if(EQUIP_SHOP_1[19])
+         {
+            EQUIP_SHOP_1[19].cost = 30000;
+         }
+         if(EQUIP_SHOP_1[20])
+         {
+            EQUIP_SHOP_1[20].cost = 30000;
+         }
+         if(EQUIP_SHOP_1[21])
+         {
+            EQUIP_SHOP_1[21].cost = 30000;
+         }
+         if(!Players.player1.weapon.owned)
+         {
+            Players.player1.weapon = Equip.getRandomEquip(ultrapro9000.type);
+            Players.player1.armor = Equip.getRandomEquip(hoboclothes.type);
+            Players.player1.hat = Equip.getRandomEquip(captainhat.type);
+         }
+         if(!Players.player2.weapon.owned)
+         {
+            Players.player2.weapon = Equip.getRandomEquip(Equips.darktooth.type);
+            Players.player2.armor = Equip.getRandomEquip(Equips.reddress.type);
+            Players.player2.hat = Equip.getRandomEquip(Equips.redribbon.type);
+         }
+         if(!Players.player3.weapon.owned)
+         {
+            Players.player3.weapon = Equip.getRandomEquip(Equips.shadowblaster.type);
+            Players.player3.armor = Equip.getRandomEquip(Equips.officercoat.type);
+            Players.player3.hat = Equip.getRandomEquip(Equips.officerhat.type);
+         }
+         if(!Players.player4.weapon.owned)
+         {
+            Players.player4.weapon = Equip.getRandomEquip(Equips.fairybow.type);
+            Players.player4.armor = Equip.getRandomEquip(Equips.rangerskirt.type);
+            Players.player4.hat = Equip.getRandomEquip(Equips.orangebauble.type);
+         }
+         if(!Players.player5.weapon.owned)
+         {
+            Players.player5.weapon = Equip.getRandomEquip(Equips.steelbuckler.type);
+            Players.player5.armor = Equip.getRandomEquip(Equips.heroicarmor.type);
+            Players.player5.hat = Equip.getRandomEquip(Equips.knighthelmet.type);
+         }
+         Players.player1.hat.owned = true;
+         Players.player1.armor.owned = true;
+         Players.player1.weapon.owned = true;
+         Players.player1.setEquipGraphics();
+      }
+   }
+}
+
