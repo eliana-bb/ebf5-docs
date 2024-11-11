@@ -6,20 +6,25 @@ import json
 NOW = datetime.datetime.now(datetime.UTC).strftime("%Y%m%d%H%M%S%f")[:17]
 
 stats = ("HP", "attack", "defence", "magicAttack", "magicDefence", "accuracy", "evade")
-for equip in data.equips.values():
-    equip_name = data.equip_names[equip["SID"]][0]
-    has_status = "statusEffect" in equip and equip["statusEffect"] not in (None, "Status.NONE")
-    has_buff = "buffEffect" in equip and equip["buffEffect"] not in (None, "Stats.NONE")
-    has_specials = "specials" in equip and equip["specials"] not in ([], [None])
-    if has_specials:
-        for level, special in enumerate(equip["specials"]):
-            if special is None:
-                continue
-            special_type = special[0][6:]
-            if special_type == "BOOST":
-                print(equip_name,end=":")
-                print(special[1][8:].title(), end=";")
-                print(level+1)
-            continue
-            if special_type not in ():
-                print(special_type)
+with open("data/local_skills.as") as infile:
+    file_content = infile.read()
+
+skill_locals = re.findall(r"public static var ([^:]+):Object = \{[ \n]+\"name\":\"([^\"]+)\"", file_content)
+
+skill_locals.extend(re.findall(r"public static var ([^:]+):String = \"([^\"]+)\"", file_content))
+
+print("{")
+for sid, name in skill_locals:
+    if re.match(r"[A-Z]", sid):
+        continue
+    name = name.replace('\\\'', '\'')
+    print(f"\t\"{sid}\": \"{name}\",")
+print("}")
+
+with open("data/Spells.as") as infile:
+    file_content = infile.read()
+
+skill_sids = re.findall(r"public static var ([^:]+):Spell = new Spell\({[\n ]+\"SID\":\"([^\"]+)\"", file_content)
+
+for id, sid in skill_sids:
+    print(f"\t\"{id}\": \"{data.skill_sids[sid]}\",")
