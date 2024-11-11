@@ -6,25 +6,14 @@ import json
 NOW = datetime.datetime.now(datetime.UTC).strftime("%Y%m%d%H%M%S%f")[:17]
 
 stats = ("HP", "attack", "defence", "magicAttack", "magicDefence", "accuracy", "evade")
-with open("data/local_skills.as") as infile:
-    file_content = infile.read()
-
-skill_locals = re.findall(r"public static var ([^:]+):Object = \{[ \n]+\"name\":\"([^\"]+)\"", file_content)
-
-skill_locals.extend(re.findall(r"public static var ([^:]+):String = \"([^\"]+)\"", file_content))
-
-print("{")
-for sid, name in skill_locals:
-    if re.match(r"[A-Z]", sid):
+for equip_name, equip in data.equips.items():
+    if "specials" not in equip:
         continue
-    name = name.replace('\\\'', '\'')
-    print(f"\t\"{sid}\": \"{name}\",")
-print("}")
-
-with open("data/Spells.as") as infile:
-    file_content = infile.read()
-
-skill_sids = re.findall(r"public static var ([^:]+):Spell = new Spell\({[\n ]+\"SID\":\"([^\"]+)\"", file_content)
-
-for id, sid in skill_sids:
-    print(f"\t\"{id}\": \"{data.skill_sids[sid]}\",")
+    for special in equip["specials"]:
+        if special is None:
+            continue
+        if special[0] == "Equip.CAST":
+            print(equip_name, end=":")
+            skill_name = data.skill_names[special[1][7:]]
+            print(skill_name, end=";")
+            print(special[2])
