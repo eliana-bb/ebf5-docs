@@ -11,5 +11,15 @@ for equip in data.equips.values():
     has_status = "statusEffect" in equip and equip["statusEffect"] not in (None, "Status.NONE")
     has_buff = "buffEffect" in equip and equip["buffEffect"] not in (None, "Stats.NONE")
     has_specials = "specials" in equip and equip["specials"] not in ([], [None])
-    if not has_specials:
-        print(equip_name)
+    if has_specials:
+        for level, special in enumerate(equip["specials"]):
+            if special is None:
+                continue
+            special_type = special[0][6:]
+            if special_type == "BOOST":
+                print(equip_name,end=":")
+                print(special[1][8:].title(), end=";")
+                print(level+1)
+            continue
+            if special_type not in ():
+                print(special_type)

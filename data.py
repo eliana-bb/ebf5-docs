@@ -23138,9 +23138,7 @@ equips = {
         },
         "specials": [
             [
-                "Equip.SP_RECOVERY"
-            ],
-            [
+                "Equip.SP_RECOVERY",
                 1.2,
                 1.8,
                 2.5
