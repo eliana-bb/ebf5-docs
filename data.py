@@ -22899,7 +22899,7 @@ equips = {
         "resistance": {
             "stun": "short50"
         },
-        "specials": [],
+        "specials": [["Equip.BOOST_UNLEASH_CHANCE"]],
         "materials": [
             [
                 "Items.buckle",
